@@ -1,0 +1,22 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.formatting.provider": "none",
+    "cSpell.ignoreWords": [
+        "EEXIST",
+        "dask",
+        "matplotlib",
+        "numpy",
+        "plotly",
+        "pyenv",
+        "scikit",
+        "scipy",
+        "seaborn",
+        "virtualenv"
+    ],
+    "cSpell.enableFiletypes": [
+        "shellscript"
+    ]
+}
