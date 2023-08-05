@@ -29,13 +29,21 @@ eval "$(pyenv virtualenv-init -)"
 pyenv activate "$name_project"
 pyenv local $name_project
 
+# instalar requerimientos pip
+pip install -U sphinx sphinx_rtd_theme
+
 # iniciar gestor de paquetes
 poetry init --name=$name_project --description="$description_project" --python=$python_version 
 
-# agregar dependencias 
-dependencias=(
-    'pandas' 'numpy' 'dask' 'matplotlib' 
-    'seaborn' 'plotly' 'scikit-learn' 'scipy' 
-    'dvc')
+# agregar dependencias para ciencia de datos 
+visualization_dependencies=('matplotlib' 'seaborn' 'plotly')
+data_exploration_dependencies=('pandas' 'numpy' 'dask')
+machine_learning_dependencies=('scikit-learn')
+signs_dependencies=('scipy')
+data_version_control_dependencies=('dvc')
 
-poetry add ${dependencias[@]}
+poetry add ${visualization_dependencies[@]}
+poetry add ${data_exploration_dependencies[@]}
+poetry add ${machine_learning_dependencies[@]}
+poetry add ${signs_dependencies[@]}
+poetry add ${data_version_control_dependencies[@]}
